@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
-
+    id("com.google.gms.google-services")   // 👈 apply google services plugin
 }
+
 
 android {
     namespace = "com.example.lab5_starter"
@@ -41,5 +42,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
+    implementation("com.google.firebase:firebase-firestore")
+
 
 }
